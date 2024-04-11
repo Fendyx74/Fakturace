@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Fakturace.SIMpage"
+             Title="Simulace">
+    <ScrollView
+     BackgroundColor="Gray">
+        <VerticalStackLayout
+        Spacing="25"
+        Padding="30,0"
+        VerticalOptions="Center">
+
+            <Grid>
+                <StackLayout Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Button
+                    x:Name="Button1"
+                    Text="Generovat dodavatele"    
+                    Clicked="Button_Generovat_Dodavatele"
+                    HorizontalOptions="Center"
+                    WidthRequest="300"
+                    BackgroundColor="#FFDE00"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    BorderWidth="2" 
+                    BorderColor="Black"/>
+
+                    <BoxView HeightRequest="10" 
+                         Color="Gray" />
+
+                    <Button
+                    x:Name="Button2"
+                    Text="Generovat odběratele"               
+                    Clicked="Button_Generovat_Odberatele"
+                    HorizontalOptions="Center"
+                    WidthRequest="300"
+                    BackgroundColor="#FFDE00"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    BorderWidth="2" 
+                    BorderColor="Black"/>
+
+                    <BoxView HeightRequest="10"  
+                         Color="Gray"/>
+
+                </StackLayout>
+                
+                <StackLayout Margin="400,-65,0,0"  Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Stepper x:Name="dodavateleStepper" Minimum="1" Maximum="20" BackgroundColor="#FFDE00"/>
+                    <Label Text="{Binding Value, Source={x:Reference dodavateleStepper}}" HorizontalOptions="Center" Margin="5,7,0,0"/>
+                </StackLayout>
+                <StackLayout Margin="400,45,0,0" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Stepper x:Name="odberateleStepper" Minimum="1" Maximum="20" BackgroundColor="#FFDE00"/>
+                    <Label Text="{Binding Value, Source={x:Reference odberateleStepper}}" HorizontalOptions="Center" Margin="5,7,0,0"/>
+                </StackLayout>
+
+                <StackLayout Margin="0,350,0,0" VerticalOptions="End">
+                    <Button
+                        x:Name="resetDatabaze"
+                        Text="RESETOVAT DATABÁZI"               
+                        Clicked="Button_Reset"
+                        HorizontalOptions="Center"
+                        WidthRequest="300"
+                        BackgroundColor="Red"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        BorderWidth="2" 
+                        BorderColor="Black"/>
+                </StackLayout>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

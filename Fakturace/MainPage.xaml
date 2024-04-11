@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Fakturace.MainPage"
+             Title="">
+
+    <ScrollView
+         BackgroundColor="Gray">
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Grid>
+                <Image
+                    Source="invoice1.png"
+                    SemanticProperties.Description="Invoice"
+                    HeightRequest="500"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"/>
+
+                <Image
+                    Source="invoice1.png"
+                    SemanticProperties.Description="Invoice"
+                    HeightRequest="500"
+                    HorizontalOptions="End"
+                    VerticalOptions="Start"/>
+
+                <Label
+                    Text="FAKTURAČNÍ SYSTÉM"
+                    SemanticProperties.HeadingLevel="Level1"
+                    FontSize="32"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Start"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2"
+                    TextColor="Black"
+                    FontAttributes="Bold"/>
+
+                <StackLayout Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Button
+                        x:Name="Button1"
+                        Text="Evidence přijatých faktur"    
+                        Clicked="Button_Prijate"
+                        HorizontalOptions="Center"
+                        WidthRequest="300"
+                        BackgroundColor="#FFDE00"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        BorderWidth="2" 
+                        BorderColor="Black"/>
+
+                    <BoxView HeightRequest="10" 
+                             Color="Gray" />
+
+                    <Button
+                        x:Name="Button2"
+                        Text="Evidence vystavených faktur"               
+                        Clicked="Button_Vystavene"
+                        HorizontalOptions="Center"
+                        WidthRequest="300"
+                        BackgroundColor="#FFDE00"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        BorderWidth="2" 
+                        BorderColor="Black"/>
+
+                    <BoxView HeightRequest="10"  
+                             Color="Gray"/>
+
+                    <Button
+                        x:Name="Button3"
+                        Text="Evidence dodavatelů"               
+                        Clicked="Button_Dodavatele"
+                        HorizontalOptions="Center"
+                        WidthRequest="300"
+                        BackgroundColor="#FFDE00"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        BorderWidth="2" 
+                        BorderColor="Black"/>
+
+                    <BoxView HeightRequest="10"               
+                             Color="Gray"/>
+
+                    <Button
+                        x:Name="Button4"
+                        Text="Evidence odběratelů"               
+                        Clicked="Button_Odberatele"
+                        HorizontalOptions="Center"
+                        WidthRequest="300"
+                        BackgroundColor="#FFDE00"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        BorderWidth="2" 
+                        BorderColor="Black"/>
+
+
+
+                </StackLayout>
+
+                <StackLayout>
+                    <Button
+                        x:Name="Button5"
+                        Text="Simulace"               
+                        Clicked="Button_Simulace"
+                        HorizontalOptions="Center"
+                        WidthRequest="100"
+                        BackgroundColor="Green"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        BorderWidth="2" 
+                        BorderColor="Black"
+                        Margin="0,400,0,0"/>
+                </StackLayout>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

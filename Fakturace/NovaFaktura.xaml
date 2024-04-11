@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Fakturace.NovaFaktura"
+             Title="Vytvoření nové faktury"
+             BackgroundColor="Grey">
+    <ScrollView>
+        <VerticalStackLayout>
+            <StackLayout Padding="20">
+                <!-- První řádek -->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Odběratel" VerticalOptions="Center" />
+                    <Entry x:Name="cisloInput" Placeholder="Číslo faktury" HorizontalOptions="EndAndExpand" WidthRequest="250" Margin="0,0,20,20" BackgroundColor="White" TextColor="Black"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+
+                    <Picker x:Name="odberatelPicker" Title="Vyberte z možností:" SelectedIndexChanged="OdberatelPicker_SelectedIndexChanged">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Existující odběratel</x:String>
+                                <x:String>Jiný odběratel</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="Start" Orientation="Vertical" Margin="0,20,0,0">
+                    <ListView
+                    x:Name="odberateleList"
+                    WidthRequest="320"
+                    HeightRequest="20"
+                    BackgroundColor="#FFDD00"
+                    ItemTapped="Odberatele_ItemTapped"/>
+                     <Label
+                        x:Name="vybranyOdberatel"/>
+                </StackLayout>
+                
+
+                <!-- Druhý řádek -->
+                <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                    <Entry x:Name="jmenoInput" Placeholder="Jméno" WidthRequest="150" Margin="0,0,20,20" BackgroundColor="White" TextColor="Black"/>
+                    <Entry x:Name="prijmeniInput" Placeholder="Příjmení" WidthRequest="150" Margin="0,0,20,20" BackgroundColor="White" TextColor="Black"/>
+                    <DatePicker HorizontalOptions="EndAndExpand" WidthRequest="150" Margin="0,0,20,20" BackgroundColor="White" TextColor="Black"/>
+                </StackLayout>
+
+                <!-- Třetí řádek -->
+                <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="uliceInput" Placeholder="Ulice" WidthRequest="150" Margin="0,0,20,20" BackgroundColor="White" TextColor="Black"/>
+                    <Entry x:Name="cisloPopisneInput" Placeholder="Číslo popisné" WidthRequest="150" Margin="0,0,20,20" BackgroundColor="White" TextColor="Black"/>
+                    <Button Text="Generovat" 
+                        Clicked="Button_Generovat" 
+                        WidthRequest="150" 
+                        Margin="0,0,20,20" 
+                        HorizontalOptions="EndAndExpand" 
+                        BackgroundColor="#FFDE00"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        BorderWidth="2"
+                        BorderColor="Black"/>
+                </StackLayout>
+
+                <!-- Čtvrtý řádek -->
+                <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="mestoInput" Placeholder="Město" WidthRequest="150" Margin="0,0,20,20" BackgroundColor="White" TextColor="Black"/>
+                    <Entry x:Name="pscInput" Placeholder="PSČ" WidthRequest="150" Margin="0,0,20,20" BackgroundColor="White" TextColor="Black"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+
+                    <Entry x:Name="zemeInput" Placeholder="Země" WidthRequest="320" Margin="0,0,20,20" BackgroundColor="White" TextColor="Black"/>
+                </StackLayout>
+
+                <!-- Pátý řádek -->
+
+                <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="icoInput" Placeholder="IČO" WidthRequest="320" Margin="0,0,20,20" BackgroundColor="White" TextColor="Black"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Padding="0, 20">
+                    <Entry x:Name="idInput" Placeholder="ID produktu" WidthRequest="150" Margin="0,0,90,0" BackgroundColor="White" TextColor="Black"/>
+                    <Entry x:Name="nazevProduktuInput" Placeholder="Název produktu" WidthRequest="150" Margin="0,0,90,0" BackgroundColor="White" TextColor="Black"/>
+                    <Entry x:Name="cenaInput" Placeholder="Cena (Kč)" WidthRequest="150" Margin="0,0,90,0" BackgroundColor="White" TextColor="Black"/>
+                    <Entry x:Name="pocetKsInput" Placeholder="Počet ks" WidthRequest="150" Margin="0,0,90,0" BackgroundColor="White" TextColor="Black"/>
+                    <Entry Placeholder="Celková cena" WidthRequest="150" Margin="0,0,100,0" BackgroundColor="White" TextColor="Black" IsEnabled="False"/>
+
+                    <Button x:Name="pridat"
+                        Clicked="Button_Pridat"
+                        Text="Přidat" 
+                        WidthRequest="150" 
+                        Margin="0,0,0,0" 
+                        HorizontalOptions="Start" 
+                        BackgroundColor="#FFDE00"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        BorderWidth="2"
+                        BorderColor="Black"/>
+                </StackLayout>
+
+
+                <!--David-->
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                x:Name="idecka"
+                FontSize="20"
+                TextColor="Black"
+                FontAttributes="Bold"
+                BackgroundColor="#FFDE00"
+                HorizontalOptions="Start"
+                WidthRequest="240"
+                Padding="7,0,0,0"/>
+
+                    <Label
+                x:Name="nazvyProduktu"
+                FontSize="20"
+                TextColor="Black"
+                FontAttributes="Bold"
+                BackgroundColor="#FFDE00"
+                HorizontalOptions="Start"
+                WidthRequest="240"
+                Padding="7,0,0,0"/>
+
+                    <Label
+                x:Name="ceny"
+                FontSize="20"
+                TextColor="Black"
+                FontAttributes="Bold"
+                BackgroundColor="#FFDE00"
+                HorizontalOptions="Start"
+                WidthRequest="240"
+                Padding="7,0,0,0"/>
+
+                    <Label
+                x:Name="poctyKusu"
+                FontSize="20"
+                TextColor="Black"
+                FontAttributes="Bold"
+                BackgroundColor="#FFDE00"
+                HorizontalOptions="Start"
+                WidthRequest="240"
+                Padding="7,0,0,0"/>
+
+                    <Label
+                x:Name="cenyZaKusy"
+                FontSize="20"
+                TextColor="Black"
+                FontAttributes="Bold"
+                BackgroundColor="#FFDE00"
+                HorizontalOptions="Start"
+                WidthRequest="150"
+                Padding="7,0,0,0"/>
+
+                </StackLayout>
+
+
+                <!--David-->
+                <Frame 
+                x:Name="vygenerovano"
+                IsVisible="false"
+                WidthRequest="130"
+                HeightRequest="55"
+                HorizontalOptions="Center"
+                BackgroundColor="Green"
+                CornerRadius="10"
+                Padding="5">
+                    <Label
+                    Text="VYGENEROVÁNO"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    TextColor="White" />
+                </Frame>
+
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

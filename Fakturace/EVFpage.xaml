@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Fakturace.EVFpage"
+             Title="Evidence vystavených faktur">
+    
+    <ScrollView BackgroundColor="Gray">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- ListView -->
+            <ListView x:Name="vystaveneList"
+                  BackgroundColor="#FFDE00"
+                  HorizontalOptions="Center"
+                  SelectionMode="Single"
+                  ItemTapped="VystaveneList_ItemTapped"
+                  Grid.RowSpan="3"
+                  WidthRequest="700"
+                  Margin="0,55,0,0">
+                <!-- Zde můžete přidat vlastní šablonu pro zobrazení položek v ListView -->
+            </ListView>
+
+            <Label x:Name="vybranaFaktura" 
+                   Grid.Column="0"
+                   Grid.Row="3"
+                   HorizontalOptions="Center"
+                   Margin="0,10,0,0"
+                   Text="Vybrána faktura č. ---"/>
+
+            <!-- Buttons -->
+            <Button x:Name="novaFaktura"
+                Text="Nová faktura"
+                Clicked="Button_Nova_Faktura"
+                HorizontalOptions="End"
+                WidthRequest="300"
+                BackgroundColor="#FFDE00"
+                TextColor="Black"
+                FontAttributes="Bold"
+                BorderWidth="2"
+                BorderColor="Black"
+                Margin="0, 50, 100, 0"
+                Grid.Column="1"/>
+
+            <Button x:Name="otevrit"
+                Clicked="Button_Otevrit_Fakturu"
+                BackgroundColor="#FFDE00"
+                TextColor="Black"
+                HorizontalOptions="End"
+                WidthRequest="300"
+                Text="Otevřít fakturu"
+                FontAttributes="Bold"
+                BorderWidth="2"
+                BorderColor="Black"
+                Margin="0, 20, 100, 0"
+                Grid.Row="1"
+                Grid.Column="1"/>
+
+            <Button x:Name="smazat"
+                Clicked="Button_Smazat_Fakturu"
+                BackgroundColor="#FFDE00"
+                HorizontalOptions="End"
+                WidthRequest="300"
+                TextColor="Black"
+                Text="Smazat fakturu"
+                FontAttributes="Bold"
+                BorderWidth="2"
+                BorderColor="Black"
+                Margin="0, 20, 100, 0"
+                Grid.Row="2"
+                Grid.Column="1"/>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
