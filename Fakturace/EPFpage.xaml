@@ -19,7 +19,7 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <!-- ListView -->
+            
             <ListView x:Name="prijateList"
                       BackgroundColor="#FFDE00"
                       WidthRequest="800"

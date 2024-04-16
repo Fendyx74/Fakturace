@@ -7,7 +7,7 @@
     <ScrollView>
         <VerticalStackLayout>
             <StackLayout Padding="20">
-                <!-- První řádek -->
+                
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Odběratel" VerticalOptions="Center" />
                     <Entry x:Name="cisloInput" Placeholder="Číslo faktury" HorizontalOptions="EndAndExpand" WidthRequest="250" Margin="0,0,20,20" BackgroundColor="White" TextColor="Black"/>
@@ -37,14 +37,14 @@
                 </StackLayout>
                 
 
-                <!-- Druhý řádek -->
+                
                 <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
                     <Entry x:Name="jmenoInput" Placeholder="Jméno" WidthRequest="150" Margin="0,0,20,20" BackgroundColor="White" TextColor="Black"/>
                     <Entry x:Name="prijmeniInput" Placeholder="Příjmení" WidthRequest="150" Margin="0,0,20,20" BackgroundColor="White" TextColor="Black"/>
                     <DatePicker HorizontalOptions="EndAndExpand" WidthRequest="150" Margin="0,0,20,20" BackgroundColor="White" TextColor="Black"/>
                 </StackLayout>
 
-                <!-- Třetí řádek -->
+                
                 <StackLayout Orientation="Horizontal">
                     <Entry x:Name="uliceInput" Placeholder="Ulice" WidthRequest="150" Margin="0,0,20,20" BackgroundColor="White" TextColor="Black"/>
                     <Entry x:Name="cisloPopisneInput" Placeholder="Číslo popisné" WidthRequest="150" Margin="0,0,20,20" BackgroundColor="White" TextColor="Black"/>
@@ -60,7 +60,7 @@
                         BorderColor="Black"/>
                 </StackLayout>
 
-                <!-- Čtvrtý řádek -->
+                
                 <StackLayout Orientation="Horizontal">
                     <Entry x:Name="mestoInput" Placeholder="Město" WidthRequest="150" Margin="0,0,20,20" BackgroundColor="White" TextColor="Black"/>
                     <Entry x:Name="pscInput" Placeholder="PSČ" WidthRequest="150" Margin="0,0,20,20" BackgroundColor="White" TextColor="Black"/>
@@ -71,7 +71,7 @@
                     <Entry x:Name="zemeInput" Placeholder="Země" WidthRequest="320" Margin="0,0,20,20" BackgroundColor="White" TextColor="Black"/>
                 </StackLayout>
 
-                <!-- Pátý řádek -->
+                
 
                 <StackLayout Orientation="Horizontal">
                     <Entry x:Name="icoInput" Placeholder="IČO" WidthRequest="320" Margin="0,0,20,20" BackgroundColor="White" TextColor="Black"/>

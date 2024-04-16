@@ -55,12 +55,14 @@
 
 	<ItemGroup>
 	  <MauiImage Remove="Resources\Images\adventurwork.png" />
+	  <MauiImage Remove="Resources\Images\profilovka.png" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\arial.ttf" />
 	  <None Remove="Resources\Images\adventurwork.png" />
 	  <None Remove="Resources\Images\invoice1.png" />
+	  <None Remove="Resources\Images\profilovka.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -68,6 +70,7 @@
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </EmbeddedResource>
 	  <EmbeddedResource Include="Resources\Images\adventurwork.png" />
+	  <EmbeddedResource Include="Resources\Images\profilovka.png" />
 	</ItemGroup>
 
 	<ItemGroup>

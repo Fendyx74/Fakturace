@@ -263,7 +263,7 @@ namespace Fakturace.Model
 
             basePath = "Fakturace.Resources.Images.";
             //Get the image file stream from the assembly.
-            Stream imageStream = assembly.GetManifestResourceStream(basePath + "adventurwork.png");
+            Stream imageStream = assembly.GetManifestResourceStream(basePath + "profilovka.png");
 
             //Create a PDF bitmap image from the stream.
             PdfBitmap bitmap = new PdfBitmap(imageStream);
@@ -272,15 +272,15 @@ namespace Fakturace.Model
 
             //Calculate the text position and draw the text to the PDF page. 
             y = pageHeight - 100 + margin;
-            size = arialRegularFont.MeasureString("800 Interchange Blvd.");
+            size = arialRegularFont.MeasureString("SPŠ Jičín");
             x = pageWidth - size.Width - margin;
-            graphics.DrawString("800 Interchange Blvd.", arialRegularFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x, y));
+            graphics.DrawString("SPŠ Jičín", arialRegularFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x, y));
 
             //Calculate the text position and draw the text to the PDF page. 
             y += arialRegularFont.Height + lineSpace;
-            size = arialRegularFont.MeasureString("Suite 2501,  Austin, TX 78721");
+            size = arialRegularFont.MeasureString("Pod Koželuhy 100,  Jičín, Česká republika, 506 01");
             x = pageWidth - size.Width - margin;
-            graphics.DrawString("Suite 2501,  Austin, TX 78721", arialRegularFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x, y));
+            graphics.DrawString("Pod Koželuhy 100,  Jičín, Česká republika, 506 01", arialRegularFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x, y));
 
 
             //Calculate the text position and draw the text to the PDF page. 
@@ -291,7 +291,7 @@ namespace Fakturace.Model
 
 
 
-            
+            //Kryštof
 
             string countryCode = "CZ";
             string accountNumber = "4020628063/0800";
@@ -320,7 +320,7 @@ namespace Fakturace.Model
             // Vykreslení QR kódu na stránku PDF
             qrBarcode.Draw(page, new Syncfusion.Drawing.PointF(395, 540), new Syncfusion.Drawing.SizeF(100,100)); //(427, 575)
 
-
+            //---------------------------------------------------------------------------------------------------------
 
 
             MemoryStream stream = new MemoryStream();
